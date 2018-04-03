@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/fragment-header :: head"></head>
+    <body>
+    		<div th:replace="fragments/fragment-header :: navigation"></div>
+    		<div style="padding-left:10px;padding-right:10px">
+	        <table id="table_id" class="display">
+			    <thead>
+			        <tr>
+			            <th>No</th>
+			            <th>NPM</th>
+			            <th>Name</th>
+			            <th>Program Studi</th>
+			            <th>Tahun Masuk</th>
+			            <th>Jalur</th>
+			            <th>Detail Mahasiswa</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="mahasiswa,iterationStatus: ${arrMahasiswa}">
+			            <td style="text-align: center" th:text="${iterationStatus.count}">Number</td>
+			            <td th:text="${mahasiswa.npm}">Student NPM</td>
+			            <td th:text="${mahasiswa.nama}">Student Name</td>
+			            <td th:text="${prodi}">Student Prodi</td>
+			            <td th:text="${mahasiswa.tahun_masuk}">Student Prodi</td>
+			            <td th:text="${mahasiswa.jalur_masuk}">Student Prodi</td>
+			            <td><a class="btn btn btn-danger" th:href="'delete/' + ${mahasiswa.npm}">Delete Data</a>   <a class="btn btn-primary" th:href="'update/' + ${mahasiswa.npm}">Update Data</a></td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+		<div th:replace="fragments/fragment-footer :: footer"></div>
+    </body>
+</html>

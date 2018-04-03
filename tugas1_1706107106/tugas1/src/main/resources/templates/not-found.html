@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/fragment-header :: head"></head>
+    <body>
+    		<div th:replace="fragments/fragment-header :: navigation"></div>
+       	<div th:if="${variable != null}" style="padding-left:10px"><h3 th:text="'NPM = ' + ${npm}">Student NPM</h3></div>
+       	<div th:replace="fragments/fragment-footer :: footer"></div>
+    </body>
+</html>

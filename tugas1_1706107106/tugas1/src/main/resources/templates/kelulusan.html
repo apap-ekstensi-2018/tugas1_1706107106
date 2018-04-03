@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment-header :: head">
+<title th:replace="fragments/fragment-header :: title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<div th:replace="fragments/fragment-header :: navigation"></div>
+	<div class="form-container">
+		<form class="form-control" th:action="@{/kelulusan}"  method="get">
+			<div class="form-group">
+      			<label for="thn">Tahun</label>
+      			<input type="text" class="form-control" id="thn" name="thn"/>
+    			</div>
+    			<div class="form-group">
+      			<label for="prodi">Prodi</label>
+      			<select class="form-control" name="prodi">
+					<option th:each="prodi : ${arrProdi}"
+                            th:value="${prodi.id}"
+                            th:text="${prodi.nama_prodi}"/>
+				</select>
+    			</div>
+	
+			<div>
+				<button class="btn btn-primary" type="submit">Lihat</button>
+			</div>
+		</form>
+	</div>
+	<div th:replace="fragments/fragment-footer :: footer"></div>
+</body>
+</html>

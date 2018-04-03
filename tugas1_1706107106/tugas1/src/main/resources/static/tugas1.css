@@ -1,0 +1,19 @@
+.container-field {
+	margin-bottom:15px;
+}
+
+.form-container {
+	margin-left:10px;
+	width:25%;
+	clear:both;
+}
+
+.button-submit-form {
+	clear:both;
+	float:right;
+	margin:10px;
+}
+
+.stretch-input {
+	width:100%;
+}

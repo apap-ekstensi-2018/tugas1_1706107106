@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/fragment-header :: head">
+	</head>
+	<body>
+		<div th:replace="fragments/fragment-header :: navigation"></div>
+		<div style="padding-left:10px">
+			<div style="width:25%;display:inline-block">
+				<div style="margin-bottom:10px"><b>NIK</b></div>				
+				<div style="margin-bottom:10px"><b>Nama</b></div>				
+				<div style="margin-bottom:10px"><b>Tempat/Tanggal Lahir</b></div>
+				<div style="margin-bottom:10px"><b>Program Studi</b></div>
+				<div style="margin-bottom:10px"><b>Fakultas</b></div>
+				<div style="margin-bottom:10px"><b>Universitas</b></div>
+				<div style="margin-bottom:10px"><b>Jenis Kelamin</b></div>			
+				<div style="margin-bottom:10px"><b>Agama</b></div>		
+				<div style="margin-bottom:10px"><b>Golongan Darah</b></div>				
+				<div style="margin-bottom:10px"><b>Tahun Masuk</b></div>
+				<div style="margin-bottom:10px"><b>Jalur Masuk</b></div>
+				<div style="margin-bottom:10px"><b>Status</b></div>
+			</div>
+			<div style="width:40%;display:inline-block">
+				<div style="margin-bottom:10px" th:text="${mahasiswa.npm}">NIK</div>				
+				<div style="margin-bottom:10px" th:text="${mahasiswa.nama}">Nama</div>				
+				<div style="margin-bottom:10px" th:text="${mahasiswa.tempat_lahir} + '/' + ${#dates.format(mahasiswa.tanggal_lahir, 'MMM dd, yyyy')}">Tempat/Tanggal Lahir</div>
+				<div style="margin-bottom:10px" th:text="${prodi}">Program Studi</div>
+				<div style="margin-bottom:10px" th:text="${fakultas}">Fakultas</div>
+				<div style="margin-bottom:10px" th:text="${universitas}">Universitas</div>
+				<div style="margin-bottom:10px" th:text="${mahasiswa.jenis_kelamin}">Jenis Kelamin</div>			
+				<div style="margin-bottom:10px" th:text="${mahasiswa.agama}">Agama</div>		
+				<div style="margin-bottom:10px" th:text="${mahasiswa.golongan_darah}">Golongan Darah</div>				
+				<div style="margin-bottom:10px" th:text="${mahasiswa.tahun_masuk}">Tahun Masuk</div>
+				<div style="margin-bottom:10px" th:text="${mahasiswa.jalur_masuk}">Jalur Masuk</div>
+				<div style="margin-bottom:10px" th:text="${mahasiswa.status}">Status</div>
+			</div>
+		</div>
+		<div th:replace="fragments/fragment-footer :: footer"></div>
+	</body>
+</html>
